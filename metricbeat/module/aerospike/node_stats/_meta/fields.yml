@@ -1,0 +1,143 @@
+- name: node_stats
+  type: group
+  description: >
+    node_stats
+  release: ga
+  fields:
+    - name: system
+      type: group
+      description: >
+        Node stats system metrics.
+      fields:
+        - name: free
+          type: group
+          description: >
+            Node stats system metrics free mem.
+          fields:
+            - name: memory_kbytes
+              type: long
+              format: bytes
+              description: >
+                Total node free memory in KB.
+            - name: memory_pct
+              type: scaled_float
+              format: percentage
+              description: >
+                Total node free memory in pct.
+            - name: thp_mem_kbytes
+              type: long
+              format: bytes
+              description: >
+                Total thp memory in kbytes.
+        - name: cpu
+          type: group
+          description: >
+            Node stats system cpu.
+          fields:
+            - name: kernel_pct
+              type: scaled_float
+              format: percentage
+              description: >
+                System kernel cpu pct.
+            - name: total_pct
+              type: scaled_float
+              format: percentage
+              description: >
+                System total cpu pct.
+            - name: user_pct
+              type: scaled_float
+              format: percentage
+              description: >
+                System users cpu pct.
+    - name: heap
+      type: group
+      description: >
+        Node stats heap memory
+      fields:
+        - name: active.bytes
+          type: long
+          format: bytes
+          description: >
+            Node heap memory active in bytes.
+        - name: allocated.bytes
+          type: long
+          format: bytes
+          description: >
+            Node heap memory allocated bytes.
+        - name: efficiency.pct
+          type: scaled_float
+          format: percentage
+          description: >
+            Total heap efficiency percentage.
+        - name: mapped.bytes
+          type: long
+          format: bytes
+          description: >
+            Heap mapped memory in bytes.
+       - name: site.count
+          type: long
+          description: >
+            Heap site count.
+    - name: client_connections
+      type: long
+      description: >
+        Node client connections.
+    - name: heartbeat
+      type: group
+      description: >
+        Node heartbeat connections.
+      fields:
+        - name: connections.total
+          type: long
+          description: >
+            Total heartbeat connections.
+        - name: connections.closed
+          type: long
+          description: >
+            Total heartbeat connections are closed.
+        - name: connections.opened
+          type: long
+          description: >
+            Total heartbeat connections are open.
+        - name: connections.received_foreign
+          type: long
+          description: >
+            Heartbeat connections received foreign.
+        - name: connections.received_self
+          type: long
+          description: >
+            Heartbeat connections received self.
+    - name: info
+      type: group
+      description: >
+        node info.
+      fields:
+        - name: complete
+          type: long
+          description: >
+            info complete.
+        - name: max_ms
+          type: long
+          description: >
+            info max ms.
+       - name: queue
+          type: long
+          description: >
+            info queue.
+      - name: threads
+          type: long
+          description: >
+            info threads.
+      - name: timeout
+          type: long
+          description: >
+            info timeout.
+    - name: failed
+      type: boolean
+      description: >
+        If true this node as gets failed.
+    - name: objects
+      type: long
+      description: >
+        Total number of objects.
+

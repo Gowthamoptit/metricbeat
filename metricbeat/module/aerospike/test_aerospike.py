@@ -15,3 +15,9 @@ class Test(metricbeat.BaseTest):
         aerospike namespace metricset test
         """
         self.check_metricset("aerospike", "namespace", self.get_hosts(), self.FIELDS)
+
+   def test_node_stats(self):
+        """
+        aerospike node_stats metricset test
+        """
+        self.check_metricset("aerospike", "node_stats", self.get_hosts(), self.FIELDS)

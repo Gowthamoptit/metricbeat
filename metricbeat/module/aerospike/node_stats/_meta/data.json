@@ -1,0 +1,72 @@
+{
+    "@timestamp": "2017-10-12T08:05:34.853Z",
+    "aerospike": {
+        "node_stats": {
+            "system": {
+                "free": {
+                    "memory_kbytes": 4294967296,
+                    "memory_pct": 99,
+                    "thp_mem_kbytes":  4294968888
+                },
+                "cpu": {
+                    "kernel_pct": 16,
+                    "total_pct": 25,
+                    "user_pct": 5
+                }
+            },
+            "heap": {
+                "active": {
+                    "bytes": 23789
+                },
+                "allocated": {
+                    "bytes": 10000
+                },
+                "efficiency": {
+                    "pct": 96
+                },
+                "mapped": {
+                    "bytes": 1240
+                },
+		"site": {
+                    "count": 11
+                }
+            },
+            "client_connections": 2,
+            "heartbeat": {
+                "connections": {
+                    "total": 10,
+		    "closed": 2,
+		    "opened": 8,
+		    "received_foreign": 6,
+		    "received_self": 4
+                }
+            },
+            "name": "test",
+            "node": {
+                "host": "localhost:3000",
+                "name": "docker"
+            },
+            "info": {
+                "complete": 10,
+                "max_ms": 12,
+	        "queue": 2,
+		"threads": 44,
+		"timeout": 2
+            },
+	    "failed": false,
+            "objects": 17
+        }
+    },
+    "event": {
+        "dataset": "aerospike.namespace",
+        "duration": 115000,
+        "module": "aerospike"
+    },
+    "metricset": {
+        "name": "node_stats"
+    },
+    "service": {
+        "address": "localhost:3000",
+        "type": "aerospike"
+    }
+}

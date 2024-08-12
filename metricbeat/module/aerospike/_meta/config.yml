@@ -1,8 +1,8 @@
 - module: aerospike
-  #metricsets:
+  metricsets: ["namespace", "node_stats"]
   #  - namespace
   period: 10s
-  hosts: ["localhost:3000"]
+  hosts: ["aerospike1:3000"]
 
   # Aerospike Cluster Name
   #cluster_name: myclustername

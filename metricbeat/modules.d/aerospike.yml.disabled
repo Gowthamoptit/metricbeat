@@ -2,7 +2,7 @@
 # Docs: https://www.elastic.co/guide/en/beats/metricbeat/main/metricbeat-module-aerospike.html
 
 - module: aerospike
-  #metricsets:
+  metricsets: ["namespace", "node_stats"]
   #  - namespace
   period: 10s
   hosts: ["localhost:3000"]
